@@ -23,6 +23,9 @@ public class ModuleBean {
     ArrayList<? extends BaseItemBean> items;
     String canReceiveTimes;
 
+    public ModuleBean() {
+    }
+
     public ModuleBean(int id, String type, String title, String channel, boolean showMore, String showType, int showNum, int startTime, int endTime, String linkUrl, boolean canDownload, boolean countDownNotShow, String btn, String targetType, ArrayList<BannerItemBean> items, String canReceiveTimes) {
         this.id = id;
         this.type = type;

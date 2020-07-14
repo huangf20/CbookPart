@@ -6,4 +6,6 @@ public class EntryItemBean extends BannerItemBean{
         super(title, text, imgUrl, linkUrl);
     }
 
+    public EntryItemBean() {
+    }
 }

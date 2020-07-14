@@ -9,7 +9,6 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello World!"
         android:id="@+id/view_fragment"
         app:layout_constraintBottom_toTopOf="@+id/bottom_bar"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -17,16 +16,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1"
         app:layout_constraintHorizontal_bias="0.50"
-         />
+         >
+
+
+    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/bottom_bar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="30dp"
         android:background="@android:color/primary_text_dark"
         android:orientation="horizontal"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="bottom"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_bar1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -36,35 +38,94 @@
 
         <ImageView
             android:id="@+id/bt_bookshelf"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="@dimen/bottom_icon_legnth"
+            android:layout_height="@dimen/bottom_icon_legnth"
             android:layout_weight="1"
-            android:src="@drawable/icon"/>
+            android:src="@drawable/bookshelf"/>
         <ImageView
             android:id="@+id/bt_choiceness"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="@dimen/bottom_icon_legnth"
+            android:layout_height="@dimen/bottom_icon_legnth"
             android:layout_weight="1"
-            android:src="@drawable/icon"/>
+            android:src="@drawable/choiceness"/>
         <ImageView
             android:id="@+id/bt_free"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="@dimen/bottom_icon_legnth"
+            android:layout_height="@dimen/bottom_icon_legnth"
             android:layout_weight="1"
-            android:src="@drawable/icon"/>
+            android:src="@drawable/free"/>
         <ImageView
             android:id="@+id/bt_bookstore"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="@dimen/bottom_icon_legnth"
+            android:layout_height="@dimen/bottom_icon_legnth"
             android:layout_weight="1"
-            android:src="@drawable/icon"/>
+            android:src="@drawable/bookstores"/>
         <ImageView
             android:id="@+id/bt_welfare"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="@dimen/bottom_icon_legnth"
+            android:layout_height="@dimen/bottom_icon_legnth"
             android:layout_weight="1"
-            android:src="@drawable/icon"/>
+            android:src="@drawable/welfare"/>
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/bottom_bar1"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@android:color/primary_text_dark"
+        android:orientation="horizontal"
+        android:gravity="top"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintHorizontal_bias="0">
 
+        <TextView
+            android:id="@+id/tv_bookshelf"
+            android:layout_width="@dimen/bottom_text_length"
+            android:layout_height="@dimen/bottom_text_length"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="书架"
+            android:textSize="@dimen/bottom_text_size"></TextView>
+
+        <TextView
+            android:id="@+id/tv_choiceness"
+            android:layout_width="@dimen/bottom_text_length"
+            android:layout_height="@dimen/bottom_text_length"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="精选"
+            android:textSize="@dimen/bottom_text_size"></TextView>
+
+        <TextView
+            android:id="@+id/tv_free"
+            android:layout_width="@dimen/bottom_text_length"
+            android:layout_height="@dimen/bottom_text_length"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="免费"
+            android:textSize="@dimen/bottom_text_size"></TextView>
+
+        <TextView
+            android:id="@+id/tv_bookstore"
+            android:layout_width="@dimen/bottom_text_length"
+            android:layout_height="@dimen/bottom_text_length"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="书库"
+            android:textSize="@dimen/bottom_text_size"></TextView>
+        <TextView
+            android:layout_width="@dimen/bottom_text_length"
+            android:layout_height="@dimen/bottom_text_length"
+            android:layout_weight="1"
+            android:text="福利"
+            android:gravity="center"
+            android:textSize="@dimen/bottom_text_size"
+            android:id="@+id/tv_welfare"
+            ></TextView>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

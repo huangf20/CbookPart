@@ -8,6 +8,9 @@ public class BannerItemBean extends BaseItemBean {
     String imgUrl;
     String linkUrl;
 
+    public BannerItemBean() {
+    }
+
     public BannerItemBean(String title, String text, String imgUrl, String linkUrl) {
         this.title = title;
         this.text = text;

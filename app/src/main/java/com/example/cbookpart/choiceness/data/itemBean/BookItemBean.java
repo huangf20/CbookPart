@@ -23,6 +23,9 @@ public class BookItemBean extends BaseItemBean {
     String ranking;
     String cpid;
 
+    public BookItemBean() {
+    }
+
     public BookItemBean(int bookId, String author, String name, String shortDesc, String customDesc, String mark, String coverUrl, String endStatus, int wordCount, ArrayList<String> tags, String cornerInfo, String parentCategory, String category, String bookMark, String readingCount, String ranking, String cpid) {
         this.bookId = bookId;
         this.author = author;

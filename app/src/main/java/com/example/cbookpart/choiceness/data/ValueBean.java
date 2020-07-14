@@ -9,7 +9,10 @@ public class ValueBean {
     String channel;
     String linkUrl;
     String channels;
-    ArrayList<ModuleBean>mModules;
+    ArrayList<ModuleBean> modules;
+
+    public ValueBean() {
+    }
 
     public ValueBean(int id, String title, String type, String channel, String linkUrl, String channels, ArrayList<ModuleBean> modules) {
         this.id = id;
@@ -18,7 +21,7 @@ public class ValueBean {
         this.channel = channel;
         this.linkUrl = linkUrl;
         this.channels = channels;
-        mModules = modules;
+        this.modules = modules;
     }
 
     public int getId() {
@@ -70,10 +73,10 @@ public class ValueBean {
     }
 
     public ArrayList<ModuleBean> getModules() {
-        return mModules;
+        return modules;
     }
 
     public void setModules(ArrayList<ModuleBean> modules) {
-        mModules = modules;
+        this.modules = modules;
     }
 }
