@@ -1,11 +1,11 @@
-package com.example.cbookpart.choiceness.data;
+package com.example.cbookpart.choiceness.data.ModuleBean;
 
 import com.example.cbookpart.choiceness.data.baseBean.BaseItemBean;
 import com.example.cbookpart.choiceness.data.itemBean.BannerItemBean;
 
 import java.util.ArrayList;
 
-public class ModuleBean {
+public class ModuleBean<T extends BaseItemBean>{
     int id;
     String type;
     String title;
@@ -20,13 +20,13 @@ public class ModuleBean {
     boolean countDownNotShow;
     String btn;
     String targetType;
-    ArrayList<? extends BaseItemBean> items;
+    ArrayList<T> items;
     String canReceiveTimes;
 
     public ModuleBean() {
     }
 
-    public ModuleBean(int id, String type, String title, String channel, boolean showMore, String showType, int showNum, int startTime, int endTime, String linkUrl, boolean canDownload, boolean countDownNotShow, String btn, String targetType, ArrayList<BannerItemBean> items, String canReceiveTimes) {
+    public ModuleBean(int id, String type, String title, String channel, boolean showMore, String showType, int showNum, int startTime, int endTime, String linkUrl, boolean canDownload, boolean countDownNotShow, String btn, String targetType, ArrayList<T> items, String canReceiveTimes) {
         this.id = id;
         this.type = type;
         this.title = title;
@@ -157,11 +157,11 @@ public class ModuleBean {
         this.targetType = targetType;
     }
 
-    public ArrayList<? extends BaseItemBean> getItems() {
+    public ArrayList<T> getItems() {
         return items;
     }
 
-    public void setItems(ArrayList<BannerItemBean> items) {
+    public void setItems(ArrayList<T> items) {
         this.items = items;
     }
 

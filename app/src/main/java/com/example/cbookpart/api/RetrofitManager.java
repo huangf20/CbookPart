@@ -1,5 +1,7 @@
 package com.example.cbookpart.api;
 
+import com.example.cbookpart.choiceness.converter.CustomConverterFactory;
+
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -23,7 +25,7 @@ public class RetrofitManager {
                     .build();
             mRetrofit=new Retrofit.Builder()
                     .baseUrl(ApiService.baseUrl)
-                    .addConverterFactory(FastJsonConverterFactory.create())
+                    .addConverterFactory(CustomConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .client(okHttpClient)
                     .build();

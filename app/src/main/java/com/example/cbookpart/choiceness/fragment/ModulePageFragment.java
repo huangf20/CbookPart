@@ -4,25 +4,35 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.cbookpart.R;
+import com.example.cbookpart.choiceness.data.ModuleBean.ModuleBean;
 
-public class SmallPageFragment extends Fragment {
-    public static final String ARG_OBJECT = "object";
+import java.util.ArrayList;
+
+public class ModulePageFragment extends Fragment {
+    private ArrayList<ModuleBean> mModuleBeans =new ArrayList<>();
+    private View mView;
+    private RecyclerView mRecyclerView;
+
+    public ModulePageFragment(ArrayList<ModuleBean> moduleBeans) {
+        mModuleBeans = moduleBeans;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.layout_small_fragment, container, false);
+        mView=inflater.inflate(R.layout.module_fragment, container, false);
+        return mView;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        Bundle args = getArguments();
+
 
     }
 }

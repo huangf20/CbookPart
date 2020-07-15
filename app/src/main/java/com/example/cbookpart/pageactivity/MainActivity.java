@@ -1,4 +1,4 @@
-package com.example.cbookpart;
+package com.example.cbookpart.pageactivity;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +13,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.cbookpart.choiceness.fragment.CollectionDemoFragment;
+import com.example.cbookpart.R;
+import com.example.cbookpart.choiceness.fragment.ValuePageFragment;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ArrayList<Integer> mImagesNext = new ArrayList<>();
     private FragmentManager mFragmentManager;
     private Fragment mPageFragmentNow;
-    private Map<Integer, PageFragment> mFragmentMap = new HashMap<>();
+    private Map<Integer, ValuePageFragment> mFragmentMap = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTvFree.setOnClickListener(this);
         mTvWelfare.setOnClickListener(this);
         mFragmentManager = getSupportFragmentManager();
-        mPageFragmentNow = new PageFragment();
+        mPageFragmentNow = new ValuePageFragment();
 
 
     }
@@ -115,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 imageView.setImageResource(mImagesNext.get(index));
                 mTextViews.get(index).setTextColor(Color.rgb(248, 111, 39));
                 if (index == 1) {
-                    replaceFragment(new PageFragment(), false);
+                    replaceFragment(new ValuePageFragment(), false);
                 }
             } else {
                 imageView.setImageResource(mImagesNow.get(index));

@@ -1,5 +1,7 @@
 package com.example.cbookpart.choiceness.data;
 
+import com.example.cbookpart.choiceness.data.ModuleBean.ModuleBean;
+
 import java.util.ArrayList;
 
 public class ValueBean {
@@ -72,7 +74,7 @@ public class ValueBean {
         this.channels = channels;
     }
 
-    public ArrayList<ModuleBean> getModules() {
+    public ArrayList< ModuleBean> getModules() {
         return modules;
     }
 
