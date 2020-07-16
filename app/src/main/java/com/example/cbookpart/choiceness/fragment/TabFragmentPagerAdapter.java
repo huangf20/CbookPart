@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
+import com.example.cbookpart.choiceness.data.ModuleBean.ModuleBean;
 import com.example.cbookpart.choiceness.data.ValueBean;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class TabFragmentPagerAdapter extends FragmentStatePagerAdapter {
@@ -24,8 +26,15 @@ public class TabFragmentPagerAdapter extends FragmentStatePagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        Fragment fragment = new ModulePageFragment(mValueBeans.get(position).getModules());
-        return fragment;
+        ArrayList<ModuleBean>moduleBeans=mValueBeans.get(position).getModules();
+        if(moduleBeans!=null){
+            ModulePageFragment fragment = new ModulePageFragment(mValueBeans.get(position).getModules());
+            return fragment;
+        }
+        else{
+            Fragment fragment=new Fragment();
+            return fragment;
+        }
     }
 
     @Override
