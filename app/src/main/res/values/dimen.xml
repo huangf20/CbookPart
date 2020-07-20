@@ -4,4 +4,8 @@
     <dimen name="bottom_text_length">20dp</dimen>
     <dimen name="bottom_text_size">10sp</dimen>
     <dimen name="entry_icon_length">40dp</dimen>
+    <dimen name="one_plus_four_plus_width">100dp</dimen>
+    <dimen name="one_plus_four_plus_height">140dp</dimen>
+    <dimen name="one_plus_small_width">70dp</dimen>
+    <dimen name="one_plus_small_height">90dp</dimen>
 </resources>

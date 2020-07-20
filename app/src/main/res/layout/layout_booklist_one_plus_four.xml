@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="310dp"
+    android:layout_margin="5dp"
+    tools:context=".pageactivity.MainActivity">
+
+    <TextView
+        android:id="@+id/title_one_plus_four"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="title"
+        android:textColor="#0E0E0E"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查看全部"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.93"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.02"></TextView>
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/more"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.98"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.025"></ImageView>
+
+    <LinearLayout
+        android:id="@+id/plus_icon_one_plus_four"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2">
+
+        <ImageView
+            android:id="@+id/big_icon_one_plus"
+            android:layout_width="@dimen/one_plus_four_plus_width"
+            android:layout_height="@dimen/one_plus_four_plus_height"
+            android:layout_margin="5dp"
+            android:src="@mipmap/test"></ImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_big_name_one_plus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="总裁的天价穷妻"
+                android:textColor="#131313"></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:id="@+id/tv_author_one_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="洛丽塔"
+                    android:textSize="12sp"></TextView>
+
+                <ImageView
+                    android:id="@+id/bt_free_read_one_plus"
+                    android:layout_width="80dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/free_read"
+
+                    ></ImageView>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_shortDesc_one_plus"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:gravity="center_vertical"
+                android:text="堂堂总裁娶了个穷妻？娶完就不穷了好嘛！"></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:gravity="bottom">
+
+                <TextView
+                    android:id="@+id/tv_category_one_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="总裁豪门"
+                    android:textSize="10sp"></TextView>
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/line"></ImageView>
+
+                <TextView
+                    android:id="@+id/tv_wordCount_one_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="513万字"
+                    android:textSize="10sp"></TextView>
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/line"></ImageView>
+
+                <TextView
+                    android:id="@+id/tv_readingCount_one_plus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="121万人在读"
+                    android:textSize="10sp"></TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="@dimen/one_plus_small_width"
+        android:layout_height="@dimen/one_plus_small_height"
+        android:src="@mipmap/test"
+        android:id="@+id/small_icon1_one_plus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.88"></ImageView>
+
+    <ImageView
+        android:layout_width="@dimen/one_plus_small_width"
+        android:layout_height="@dimen/one_plus_small_height"
+        android:src="@mipmap/test"
+        android:id="@+id/small_icon2_one_plus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.88"></ImageView>
+
+    <ImageView
+        android:layout_width="@dimen/one_plus_small_width"
+        android:layout_height="@dimen/one_plus_small_height"
+        android:src="@mipmap/test"
+        android:id="@+id/small_icon3_one_plus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.62"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.88"></ImageView>
+
+    <ImageView
+        android:layout_width="@dimen/one_plus_small_width"
+        android:layout_height="@dimen/one_plus_small_height"
+        android:src="@mipmap/test"
+        android:id="@+id/small_icon4_one_plus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.92"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.88"></ImageView>
+
+    <TextView
+        android:layout_width="@dimen/one_plus_small_width"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:textColor="#323131"
+        android:text="总裁，情难自禁"
+        android:id="@+id/tv_name1_small_one_plus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/small_icon1_one_plus"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.02"
+
+        ></TextView>
+    <TextView
+        android:layout_width="@dimen/one_plus_small_width"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:textColor="#323131"
+        android:text="总裁，情难自禁1223"
+        android:id="@+id/tv_name2_small_one_plus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/small_icon2_one_plus"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.32"
+
+        ></TextView>
+    <TextView
+        android:layout_width="@dimen/one_plus_small_width"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:textColor="#323131"
+        android:text="总裁，情难自禁1223"
+        android:id="@+id/tv_name3_small_one_plus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/small_icon3_one_plus"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.62"
+
+        ></TextView>
+    <TextView
+        android:layout_width="@dimen/one_plus_small_width"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:textColor="#323131"
+        android:text="总裁，情难自禁1223"
+        android:id="@+id/tv_name4_small_one_plus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/small_icon4_one_plus"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.92"
+
+        ></TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

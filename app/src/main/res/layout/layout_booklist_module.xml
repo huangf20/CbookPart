@@ -3,12 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="BookList"
-    android:gravity="center"
-    android:layout_gravity="center">
 
-</TextView>
+    <com.example.cbookpart.view.BookListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/book_list_view"
+        ></com.example.cbookpart.view.BookListView>
 </LinearLayout>
