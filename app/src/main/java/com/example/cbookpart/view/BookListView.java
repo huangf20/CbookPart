@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import com.example.cbookpart.R;
-import com.example.cbookpart.choiceness.adapter.ImgRowRecyclerViewAdapter;
+import com.example.cbookpart.choiceness.adapter.BookListRecyclerViewAdapter;
 import com.example.cbookpart.choiceness.data.ModuleBean.BookModuleBean;
 import com.example.cbookpart.choiceness.data.itemBean.BookItemBean;
 
@@ -76,7 +76,7 @@ public class BookListView extends FrameLayout {
         }
 
         if(showType.equals("column")){
-            View view=LayoutInflater.from(mContext).inflate(R.layout.layout_booklist_column,this,false);
+            View view=LayoutInflater.from(mContext).inflate(R.layout.layout_booklist_img_row,this,false);
             removeAllViews();
             setColumn(view);
         }
@@ -111,7 +111,7 @@ public class BookListView extends FrameLayout {
         tvAuthor.setText(bigBookItemBean.getAuthor());
         tvShortDesc.setText(bigBookItemBean.getShortDesc());
         tvCategory.setText(bigBookItemBean.getCategory());
-        tvWordCount.setText(bigBookItemBean.getWordCount()+"");
+        tvWordCount.setText(bigBookItemBean.getWordCount()/10000+"万字");
         tvReadingCount.setText(bigBookItemBean.getReadingCount());
         Glide.with(mContext)
                 .load(bigBookItemBean.getCoverUrl().replace("http://","https://"))
@@ -147,15 +147,28 @@ public class BookListView extends FrameLayout {
         tvMore=view.findViewById(R.id.img_row_more);
 
         tvTitle.setText(mModuleBean.getTitle());
-        ImgRowRecyclerViewAdapter imgRowRecyclerViewAdapter=new ImgRowRecyclerViewAdapter(mModuleBean.getItems(),mContext);
+        BookListRecyclerViewAdapter bookListRecyclerViewAdapter =new BookListRecyclerViewAdapter(mModuleBean.getItems(),mContext,0);
         LinearLayoutManager managerHorizontal = new LinearLayoutManager(mContext);
         managerHorizontal.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(managerHorizontal);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(imgRowRecyclerViewAdapter);
+        recyclerView.setAdapter(bookListRecyclerViewAdapter);
         addView(view);
     }
     private void setColumn(View view) {
+        RecyclerView recyclerView;
+        TextView tvTitle,tvMore;
+        recyclerView=view.findViewById(R.id.img_row_recyclerview);
+        tvTitle=view.findViewById(R.id.img_row_title);
+        tvMore=view.findViewById(R.id.img_row_more);
+
+        tvTitle.setText(mModuleBean.getTitle());
+        BookListRecyclerViewAdapter bookListRecyclerViewAdapter =new BookListRecyclerViewAdapter(mModuleBean.getItems(),mContext,1);
+        LinearLayoutManager managerHorizontal = new LinearLayoutManager(mContext);
+        managerHorizontal.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(managerHorizontal);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(bookListRecyclerViewAdapter);
         addView(view);
     }
 
