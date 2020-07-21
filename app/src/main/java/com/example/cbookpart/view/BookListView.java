@@ -10,10 +10,13 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
 import com.example.cbookpart.R;
+import com.example.cbookpart.choiceness.adapter.ImgRowRecyclerViewAdapter;
 import com.example.cbookpart.choiceness.data.ModuleBean.BookModuleBean;
 import com.example.cbookpart.choiceness.data.itemBean.BookItemBean;
 
@@ -134,7 +137,22 @@ public class BookListView extends FrameLayout {
     private void setRow(View view) {
         addView(view);
     }
+
+
     private void setImgRow(View view) {
+        RecyclerView recyclerView;
+        TextView tvTitle,tvMore;
+        recyclerView=view.findViewById(R.id.img_row_recyclerview);
+        tvTitle=view.findViewById(R.id.img_row_title);
+        tvMore=view.findViewById(R.id.img_row_more);
+
+        tvTitle.setText(mModuleBean.getTitle());
+        ImgRowRecyclerViewAdapter imgRowRecyclerViewAdapter=new ImgRowRecyclerViewAdapter(mModuleBean.getItems(),mContext);
+        LinearLayoutManager managerHorizontal = new LinearLayoutManager(mContext);
+        managerHorizontal.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerView.setLayoutManager(managerHorizontal);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(imgRowRecyclerViewAdapter);
         addView(view);
     }
     private void setColumn(View view) {
