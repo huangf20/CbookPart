@@ -1,11 +1,13 @@
 package com.example.cbookpart.view;
 
 import android.content.Context;
+import android.net.Uri;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,12 +18,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import com.example.cbookpart.R;
+import com.example.cbookpart.api.PageJump;
 import com.example.cbookpart.choiceness.adapter.BookListRecyclerViewAdapter;
 import com.example.cbookpart.choiceness.data.ModuleBean.BookModuleBean;
 import com.example.cbookpart.choiceness.data.itemBean.BookItemBean;
 
 
-public class BookListView extends FrameLayout {
+public class BookListView extends FrameLayout implements View.OnClickListener {
     Context mContext;
     BookModuleBean mModuleBean;
     public BookListView(@NonNull Context context) {
@@ -85,7 +88,7 @@ public class BookListView extends FrameLayout {
 
     private void setOnePlusFour(View view) {
         TextView tvTitle,tvBigName,tvAuthor,tvShortDesc,tvCategory,tvWordCount,tvReadingCount,tvSmallName1,tvSmallName2,tvSmallName3,tvSmallName4;
-        ImageView ivBigIcon,ivSmallIcon1,ivSmallIcon2,ivSmallIcon3,ivSmallIcon4;
+        ImageView ivBigIcon,ivSmallIcon1,ivSmallIcon2,ivSmallIcon3,ivSmallIcon4,ivFree;
         {
             tvTitle=view.findViewById(R.id.title_one_plus_four);
             tvBigName=view.findViewById(R.id.tv_big_name_one_plus);
@@ -95,6 +98,9 @@ public class BookListView extends FrameLayout {
             tvWordCount=view.findViewById(R.id.tv_wordCount_one_plus);
             tvReadingCount=view.findViewById(R.id.tv_readingCount_one_plus);
             ivBigIcon=view.findViewById(R.id.big_icon_one_plus);
+            ivBigIcon.setOnClickListener(this);
+            ivFree=view.findViewById(R.id.bt_free_read_one_plus);
+            ivFree.setOnClickListener(this);
             ivSmallIcon1=view.findViewById(R.id.small_icon1_one_plus);
             ivSmallIcon2=view.findViewById(R.id.small_icon2_one_plus);
             ivSmallIcon3=view.findViewById(R.id.small_icon3_one_plus);
@@ -103,6 +109,16 @@ public class BookListView extends FrameLayout {
             tvSmallName2=view.findViewById(R.id.tv_name2_small_one_plus);
             tvSmallName3=view.findViewById(R.id.tv_name3_small_one_plus);
             tvSmallName4=view.findViewById(R.id.tv_name4_small_one_plus);
+            ivSmallIcon1.setOnClickListener(this);
+            ivSmallIcon2.setOnClickListener(this);
+            ivSmallIcon3.setOnClickListener(this);
+            ivSmallIcon4.setOnClickListener(this);
+            tvSmallName1.setOnClickListener(this);
+            tvSmallName2.setOnClickListener(this);
+            tvSmallName3.setOnClickListener(this);
+            tvSmallName4.setOnClickListener(this);
+            LinearLayout linearLayout=  view.findViewById(R.id.one_plus_linear);
+            linearLayout.setOnClickListener(this);
         }
         tvTitle.setText(mModuleBean.getTitle());
 
@@ -173,8 +189,32 @@ public class BookListView extends FrameLayout {
     }
 
 
-
-
-
-
+    @Override
+    public void onClick(View view) {
+        if(view.getId()==R.id.big_icon_one_plus||view.getId()==R.id.one_plus_linear)
+        {
+            PageJump pageJump=new PageJump();
+            pageJump.jumpToById(mModuleBean.getItems().get(0).getBookId(),"bookdetail",mContext);
+        }
+        if(view.getId()==R.id.small_icon1_one_plus||view.getId()==R.id.small_icon1_one_plus){
+            PageJump pageJump=new PageJump();
+            pageJump.jumpToById(mModuleBean.getItems().get(1).getBookId(),"bookdetail",mContext);
+        }
+        if(view.getId()==R.id.small_icon2_one_plus||view.getId()==R.id.small_icon2_one_plus){
+            PageJump pageJump=new PageJump();
+            pageJump.jumpToById(mModuleBean.getItems().get(2).getBookId(),"bookdetail",mContext);
+        }
+        if(view.getId()==R.id.small_icon3_one_plus||view.getId()==R.id.small_icon3_one_plus){
+            PageJump pageJump=new PageJump();
+            pageJump.jumpToById(mModuleBean.getItems().get(3).getBookId(),"bookdetail",mContext);
+        }
+        if(view.getId()==R.id.small_icon4_one_plus||view.getId()==R.id.small_icon4_one_plus){
+            PageJump pageJump=new PageJump();
+            pageJump.jumpToById(mModuleBean.getItems().get(4).getBookId(),"bookdetail",mContext);
+        }
+        if(view.getId()==R.id.bt_free_read_one_plus){
+            PageJump pageJump=new PageJump();
+            pageJump.jumpToById(mModuleBean.getItems().get(0).getBookId(),"reader",mContext);
+        }
+    }
 }

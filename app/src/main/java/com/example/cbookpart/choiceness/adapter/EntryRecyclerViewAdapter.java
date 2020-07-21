@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.cbookpart.R;
+import com.example.cbookpart.api.PageJump;
 import com.example.cbookpart.choiceness.data.itemBean.EntryItemBean;
 
 import java.util.ArrayList;
@@ -55,7 +56,7 @@ public class EntryRecyclerViewAdapter extends RecyclerView.Adapter<EntryRecycler
         return mEntryItemBeans.size();
     }
 
-    public class EntryViewHolder extends RecyclerView.ViewHolder{
+    public class EntryViewHolder extends RecyclerView.ViewHolder {
 
         ImageView mImageView;
         TextView mTextView;
@@ -63,6 +64,7 @@ public class EntryRecyclerViewAdapter extends RecyclerView.Adapter<EntryRecycler
             super(itemView);
             mImageView=itemView.findViewById(R.id.entry_imageview);
             mTextView=itemView.findViewById(R.id.entry_textview);
+
         }
         public void bindData(EntryItemBean entryItemBean,int position)
         {
@@ -70,6 +72,23 @@ public class EntryRecyclerViewAdapter extends RecyclerView.Adapter<EntryRecycler
                     .load(entryItemBean.getImgUrl())
                     .into(mImageView);
             mTextView.setText(entryItemBean.getTitle());
+
+            mImageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    PageJump pageJump=new PageJump();
+                    pageJump.jumpTo(entryItemBean.getLinkUrl(),mContext);
+                }
+            });
+            mTextView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    PageJump pageJump=new PageJump();
+                    pageJump.jumpTo(entryItemBean.getLinkUrl(),mContext);
+                }
+            });
         }
+
+
     }
 }

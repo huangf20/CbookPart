@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.cbookpart.R;
+import com.example.cbookpart.api.PageJump;
 import com.example.cbookpart.choiceness.data.itemBean.BookItemBean;
 
 
@@ -77,8 +78,10 @@ public class BookListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVi
     public class ImgRowViewHolder extends RecyclerView.ViewHolder {
         ImageView mImageView;
         TextView mTvName,mTvReadCount;
+        View mView;
         public ImgRowViewHolder(@NonNull View itemView) {
             super(itemView);
+            mView=itemView;
             mImageView=itemView.findViewById(R.id.img_row_icon);
             mTvName=itemView.findViewById(R.id.img_row_name);
             mTvReadCount=itemView.findViewById(R.id.img_row_readcount);
@@ -91,13 +94,23 @@ public class BookListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVi
             Glide.with(mContext)
                     .load(bookItemBean.getCoverUrl())
                     .into(mImageView);
+            mView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    PageJump pageJump=new PageJump();
+                    pageJump.jumpToById(bookItemBean.getBookId(),"bookdetail",mContext);
+                }
+            });
+
         }
     }
     public class ColumnViewHolder extends RecyclerView.ViewHolder{
         ImageView mImageView;
         TextView mTvName, mTvShortDesc, mTvAuthor, mTvWordCount;
+        View mView;
         public ColumnViewHolder(@NonNull View itemView) {
             super(itemView);
+            mView=itemView;
             mImageView=itemView.findViewById(R.id.icon_column);
             mTvName =itemView.findViewById(R.id.tv_name_column);
             mTvShortDesc =itemView.findViewById(R.id.shortDesc_column);
@@ -113,6 +126,13 @@ public class BookListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVi
             mTvShortDesc.setText(bookItemBean.getShortDesc());
             mTvAuthor.setText(bookItemBean.getAuthor());
             mTvWordCount.setText(bookItemBean.getWordCount()/1000+"万字");
+            mView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    PageJump pageJump=new PageJump();
+                    pageJump.jumpToById(bookItemBean.getBookId(),"bookdetail",mContext);
+                }
+            });
         }
     }
     public class RowViewHolder extends RecyclerView.ViewHolder{

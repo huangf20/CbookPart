@@ -1,6 +1,7 @@
 package com.example.cbookpart.choiceness.adapter;
 
 import android.content.Context;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
@@ -8,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.cbookpart.api.PageJump;
 import com.example.cbookpart.choiceness.data.itemBean.BannerItemBean;
 import com.example.cbookpart.pageactivity.DataBean;
 import com.example.cbookpart.pageactivity.ImageAdapter;
@@ -40,6 +42,13 @@ public class BannerImageAdapter extends BannerAdapter<BannerItemBean, BannerImag
         Glide.with(mContext)
                 .load(data.getImgUrl())
                 .into(imageView);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PageJump pageJump=new PageJump();
+                pageJump.jumpTo(data.getLinkUrl(),mContext);
+            }
+        });
     }
 
     class BannerViewHolder extends RecyclerView.ViewHolder {
