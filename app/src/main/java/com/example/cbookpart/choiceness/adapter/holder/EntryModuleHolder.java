@@ -12,18 +12,19 @@ import com.example.cbookpart.choiceness.adapter.EntryRecyclerViewAdapter;
 import com.example.cbookpart.choiceness.adapter.ModuleRecyclerViewAdapter;
 import com.example.cbookpart.choiceness.data.ModuleBean.EntryModuleBean;
 
-public class EntryModuleHolder extends AbsModuleHolder<EntryModuleBean>{
+public class EntryModuleHolder extends AbsModuleHolder<EntryModuleBean> {
     private Context mContext;
     private RecyclerView mRecyclerView;
+
     public EntryModuleHolder(@NonNull View itemView, ModuleRecyclerViewAdapter moduleRecyclerViewAdapter) {
         super(itemView, moduleRecyclerViewAdapter);
-        mContext=moduleRecyclerViewAdapter.getContext();
-        mRecyclerView=itemView.findViewById(R.id.entry_recyclerview);
+        mContext = moduleRecyclerViewAdapter.getContext();
+        mRecyclerView = itemView.findViewById(R.id.entry_recyclerview);
     }
 
     @Override
     public void bindData(EntryModuleBean moduleBean, int position) {
-        EntryRecyclerViewAdapter entryRecyclerViewAdapter=new EntryRecyclerViewAdapter(mContext);
+        EntryRecyclerViewAdapter entryRecyclerViewAdapter = new EntryRecyclerViewAdapter(mContext);
         LinearLayoutManager managerHorizontal = new LinearLayoutManager(mContext);
         managerHorizontal.setOrientation(LinearLayoutManager.HORIZONTAL);
         mRecyclerView.setLayoutManager(managerHorizontal);

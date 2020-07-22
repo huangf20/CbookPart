@@ -15,15 +15,15 @@ public class RetrofitManager {
 
     public static Retrofit retrofit() {
         if (mRetrofit == null) {
-            HttpLoggingInterceptor loggingInterceptor=new HttpLoggingInterceptor()
+            HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor()
                     .setLevel(HttpLoggingInterceptor.Level.BASIC);
-            OkHttpClient okHttpClient=new OkHttpClient.Builder()
+            OkHttpClient okHttpClient = new OkHttpClient.Builder()
                     .writeTimeout(30_1000, TimeUnit.MILLISECONDS)
-                    .readTimeout(20_1000,TimeUnit.MILLISECONDS)
-                    .connectTimeout(15_1000,TimeUnit.MILLISECONDS)
+                    .readTimeout(20_1000, TimeUnit.MILLISECONDS)
+                    .connectTimeout(15_1000, TimeUnit.MILLISECONDS)
                     .addInterceptor(loggingInterceptor)
                     .build();
-            mRetrofit=new Retrofit.Builder()
+            mRetrofit = new Retrofit.Builder()
                     .baseUrl(ApiService.baseUrl)
                     .addConverterFactory(CustomConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

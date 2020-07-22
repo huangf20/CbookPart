@@ -15,10 +15,11 @@ public class BookModuleHolder extends AbsModuleHolder<BookModuleBean> {
 
     Context mContext;
     BookListView mBookListView;
+
     public BookModuleHolder(@NonNull View itemView, ModuleRecyclerViewAdapter moduleRecyclerViewAdapter) {
         super(itemView, moduleRecyclerViewAdapter);
-        mContext=moduleRecyclerViewAdapter.getContext();
-        mBookListView=itemView.findViewById(R.id.book_list_view);
+        mContext = moduleRecyclerViewAdapter.getContext();
+        mBookListView = itemView.findViewById(R.id.book_list_view);
     }
 
     @Override

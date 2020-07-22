@@ -25,12 +25,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/img_row_more"
+        android:id="@+id/img_row_bt_more"
         android:text="查看更多"
         ></TextView>
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
+        android:id="@+id/img_row_iv_more"
         android:src="@drawable/more"></ImageView>
 </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView

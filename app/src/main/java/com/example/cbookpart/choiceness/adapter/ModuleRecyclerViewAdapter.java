@@ -23,27 +23,30 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ModuleRecyclerViewAdapter extends RecyclerView.Adapter<AbsModuleHolder>{
-    private ArrayList<ModuleBean> mModuleBeans=new ArrayList<>();
+public class ModuleRecyclerViewAdapter extends RecyclerView.Adapter<AbsModuleHolder> {
+    private ArrayList<ModuleBean> mModuleBeans = new ArrayList<>();
     private Context mContext;
 
     public ModuleRecyclerViewAdapter(Context context) {
         mContext = context;
     }
 
-    public void setModuleBeans(ArrayList<ModuleBean> moduleBeans){
-        mModuleBeans=moduleBeans;
+    public void setModuleBeans(ArrayList<ModuleBean> moduleBeans) {
+        mModuleBeans = moduleBeans;
         notifyDataSetChanged();
 
     }
+
     public List<Class<? extends ModuleBean>> mModuleTypes = new ArrayList<>();
     public List<Class<? extends AbsModuleHolder>> mHolderTypes = new ArrayList<>();
     public List<Integer> mViewTypes = new ArrayList<>();
+
     {
         registerModule(BannerModuleBean.class, BannerModuleHolder.class, R.layout.layout_banner_module);
-        registerModule(EntryModuleBean.class, EntryModuleHolder.class,R.layout.layout_entry_module);
-        registerModule(BookModuleBean.class, BookModuleHolder.class,R.layout.layout_booklist_module);
+        registerModule(EntryModuleBean.class, EntryModuleHolder.class, R.layout.layout_entry_module);
+        registerModule(BookModuleBean.class, BookModuleHolder.class, R.layout.layout_booklist_module);
     }
+
     private void registerModule(Class<? extends ModuleBean> dataClass, Class<? extends AbsModuleHolder> holderClass, int layoutId) {
         mModuleTypes.add(dataClass);
         mHolderTypes.add(holderClass);
@@ -54,13 +57,13 @@ public class ModuleRecyclerViewAdapter extends RecyclerView.Adapter<AbsModuleHol
     @NonNull
     @Override
     public AbsModuleHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(mContext).inflate(mViewTypes.get(viewType),parent,false);
-        Class holder=mHolderTypes.get(viewType);
+        View view = LayoutInflater.from(mContext).inflate(mViewTypes.get(viewType), parent, false);
+        Class holder = mHolderTypes.get(viewType);
 
         try {
-            Constructor constructor = holder.getConstructor(View.class,ModuleRecyclerViewAdapter.class);
-            Object absHolder=constructor.newInstance(view,ModuleRecyclerViewAdapter.this);
-            return (AbsModuleHolder)absHolder;
+            Constructor constructor = holder.getConstructor(View.class, ModuleRecyclerViewAdapter.class);
+            Object absHolder = constructor.newInstance(view, ModuleRecyclerViewAdapter.this);
+            return (AbsModuleHolder) absHolder;
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
@@ -75,7 +78,7 @@ public class ModuleRecyclerViewAdapter extends RecyclerView.Adapter<AbsModuleHol
 
     @Override
     public void onBindViewHolder(@NonNull AbsModuleHolder holder, int position) {
-        holder.bindData(mModuleBeans.get(position),position);
+        holder.bindData(mModuleBeans.get(position), position);
     }
 
     @Override
@@ -88,5 +91,7 @@ public class ModuleRecyclerViewAdapter extends RecyclerView.Adapter<AbsModuleHol
         return mModuleBeans.size();
     }
 
-    public Context getContext(){return  mContext;}
+    public Context getContext() {
+        return mContext;
+    }
 }

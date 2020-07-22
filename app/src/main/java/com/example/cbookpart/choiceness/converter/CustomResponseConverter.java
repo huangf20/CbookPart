@@ -71,22 +71,22 @@ public class CustomResponseConverter<T> implements Converter<ResponseBody, Resul
 
 
                 }
-                if(type.equals("banner")){
-                    BannerModuleBean bannerModuleBean= new BannerModuleBean(moduleBean.getId(),moduleBean.getType(),moduleBean.getTitle(),moduleBean.getChannel(),moduleBean.isShowMore(),moduleBean.getShowType(),moduleBean.getShowNum(),
-                            moduleBean.getStartTime(),moduleBean.getEndTime(),moduleBean.getLinkUrl(),moduleBean.isCanDownload(),moduleBean.isCountDownNotShow(),moduleBean.getBtn(),moduleBean.getTargetType(),
-                            replaceItems,moduleBean.getCanReceiveTimes()) ;
+                if (type.equals("banner")) {
+                    BannerModuleBean bannerModuleBean = new BannerModuleBean(moduleBean.getId(), moduleBean.getType(), moduleBean.getTitle(), moduleBean.getChannel(), moduleBean.isShowMore(), moduleBean.getShowType(), moduleBean.getShowNum(),
+                            moduleBean.getStartTime(), moduleBean.getEndTime(), moduleBean.getLinkUrl(), moduleBean.isCanDownload(), moduleBean.isCountDownNotShow(), moduleBean.getBtn(), moduleBean.getTargetType(),
+                            replaceItems, moduleBean.getCanReceiveTimes());
                     replaceModules.add(bannerModuleBean);
                 }
-                if(type.equals("entry")){
-                    EntryModuleBean entryModuleBean= new EntryModuleBean(moduleBean.getId(),moduleBean.getType(),moduleBean.getTitle(),moduleBean.getChannel(),moduleBean.isShowMore(),moduleBean.getShowType(),moduleBean.getShowNum(),
-                            moduleBean.getStartTime(),moduleBean.getEndTime(),moduleBean.getLinkUrl(),moduleBean.isCanDownload(),moduleBean.isCountDownNotShow(),moduleBean.getBtn(),moduleBean.getTargetType(),
-                            replaceItems,moduleBean.getCanReceiveTimes());
+                if (type.equals("entry")) {
+                    EntryModuleBean entryModuleBean = new EntryModuleBean(moduleBean.getId(), moduleBean.getType(), moduleBean.getTitle(), moduleBean.getChannel(), moduleBean.isShowMore(), moduleBean.getShowType(), moduleBean.getShowNum(),
+                            moduleBean.getStartTime(), moduleBean.getEndTime(), moduleBean.getLinkUrl(), moduleBean.isCanDownload(), moduleBean.isCountDownNotShow(), moduleBean.getBtn(), moduleBean.getTargetType(),
+                            replaceItems, moduleBean.getCanReceiveTimes());
                     replaceModules.add(entryModuleBean);
                 }
-                if(type.equals("booklist")){
-                    BookModuleBean bookModuleBean= new BookModuleBean(moduleBean.getId(),moduleBean.getType(),moduleBean.getTitle(),moduleBean.getChannel(),moduleBean.isShowMore(),moduleBean.getShowType(),moduleBean.getShowNum(),
-                            moduleBean.getStartTime(),moduleBean.getEndTime(),moduleBean.getLinkUrl(),moduleBean.isCanDownload(),moduleBean.isCountDownNotShow(),moduleBean.getBtn(),moduleBean.getTargetType(),
-                            replaceItems,moduleBean.getCanReceiveTimes());
+                if (type.equals("booklist")) {
+                    BookModuleBean bookModuleBean = new BookModuleBean(moduleBean.getId(), moduleBean.getType(), moduleBean.getTitle(), moduleBean.getChannel(), moduleBean.isShowMore(), moduleBean.getShowType(), moduleBean.getShowNum(),
+                            moduleBean.getStartTime(), moduleBean.getEndTime(), moduleBean.getLinkUrl(), moduleBean.isCanDownload(), moduleBean.isCountDownNotShow(), moduleBean.getBtn(), moduleBean.getTargetType(),
+                            replaceItems, moduleBean.getCanReceiveTimes());
 
                     replaceModules.add(bookModuleBean);
                 }

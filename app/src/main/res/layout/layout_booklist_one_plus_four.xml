@@ -27,6 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="查看全部"
+        android:id="@+id/one_plus_bt_more"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -38,6 +39,7 @@
         android:layout_width="15dp"
         android:layout_height="15dp"
         android:src="@drawable/more"
+        android:id="@+id/one_plus_iv_more"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.98"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -163,7 +165,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85"></ImageView>
+        app:layout_constraintVertical_bias="0.84"></ImageView>
 
     <ImageView
         android:layout_width="@dimen/one_plus_small_width"
@@ -175,7 +177,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85"></ImageView>
+        app:layout_constraintVertical_bias="0.84"></ImageView>
 
     <ImageView
         android:layout_width="@dimen/one_plus_small_width"
@@ -187,7 +189,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85"></ImageView>
+        app:layout_constraintVertical_bias="0.84"></ImageView>
 
     <ImageView
         android:layout_width="@dimen/one_plus_small_width"
@@ -199,14 +201,14 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85"></ImageView>
+        app:layout_constraintVertical_bias="0.84"></ImageView>
 
     <TextView
         android:layout_marginTop="@dimen/one_plus_small_icon_text_margin"
         android:lines="2"
         android:layout_width="@dimen/one_plus_small_width"
         android:layout_height="wrap_content"
-        android:textSize="10sp"
+        android:textSize="12sp"
         android:textColor="#323131"
         android:text="总裁，情难自禁"
         android:id="@+id/tv_name1_small_one_plus"
@@ -223,7 +225,7 @@
         android:lines="2"
         android:layout_width="@dimen/one_plus_small_width"
         android:layout_height="wrap_content"
-        android:textSize="10sp"
+        android:textSize="12sp"
         android:textColor="#323131"
         android:text="总裁，情难自禁1223"
         android:id="@+id/tv_name2_small_one_plus"
@@ -240,7 +242,7 @@
         android:lines="2"
         android:layout_width="@dimen/one_plus_small_width"
         android:layout_height="wrap_content"
-        android:textSize="10sp"
+        android:textSize="12sp"
         android:textColor="#323131"
         android:text="总裁，情难自禁1223"
         android:id="@+id/tv_name3_small_one_plus"
@@ -257,7 +259,7 @@
         android:lines="2"
         android:layout_width="@dimen/one_plus_small_width"
         android:layout_height="wrap_content"
-        android:textSize="10sp"
+        android:textSize="12sp"
         android:textColor="#323131"
         android:text="总裁，情难自禁1223"
         android:id="@+id/tv_name4_small_one_plus"
