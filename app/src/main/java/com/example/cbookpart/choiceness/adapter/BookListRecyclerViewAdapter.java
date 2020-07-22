@@ -125,7 +125,7 @@ public class BookListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVi
             mTvName.setText(bookItemBean.getName());
             mTvShortDesc.setText(bookItemBean.getShortDesc());
             mTvAuthor.setText(bookItemBean.getAuthor());
-            mTvWordCount.setText(bookItemBean.getWordCount()/1000+"万字");
+            mTvWordCount.setText(bookItemBean.getWordCount()/10000+"万字");
             mView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

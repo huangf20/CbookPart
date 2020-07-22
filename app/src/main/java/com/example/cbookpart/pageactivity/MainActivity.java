@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ArrayList<TextView> mTextViews = new ArrayList<>();
     private ArrayList<Integer> mImagesNow = new ArrayList<>();
     private ArrayList<Integer> mImagesNext = new ArrayList<>();
+    private HashMap<Integer, Fragment> mFragmentHashMap = new HashMap<>();
     private FragmentManager mFragmentManager;
     private Fragment mPageFragmentNow;
     private Map<Integer, ValuePageFragment> mFragmentMap = new HashMap<>();
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTvFree.setOnClickListener(this);
         mTvWelfare.setOnClickListener(this);
         mFragmentManager = getSupportFragmentManager();
-        mPageFragmentNow = new ValuePageFragment();
+        mPageFragmentNow = new Fragment();
 
 
     }
@@ -116,11 +117,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 imageView.setImageResource(mImagesNext.get(index));
                 mTextViews.get(index).setTextColor(Color.rgb(248, 111, 39));
                 if (index == 1) {
-                    replaceFragment(new ValuePageFragment(), false);
+                    if (!mFragmentHashMap.containsKey(index)) {
+                        ValuePageFragment fragment = new ValuePageFragment();
+                        mFragmentHashMap.put(index, fragment);
+                        replaceFragment(fragment, false);
+                    } else {
+                        replaceFragment(mFragmentHashMap.get(index), true);
+                    }
+                } else {
+                    if (!mFragmentHashMap.containsKey(index)) {
+                        Fragment fragment = new Fragment();
+                        mFragmentHashMap.put(index, fragment);
+                        replaceFragment(fragment, false);
+                    } else {
+                        replaceFragment(mFragmentHashMap.get(index), true);
+                    }
                 }
+
             } else {
                 imageView.setImageResource(mImagesNow.get(index));
                 mTextViews.get(index).setTextColor(Color.rgb(115, 115, 115));
+
             }
         }
 
