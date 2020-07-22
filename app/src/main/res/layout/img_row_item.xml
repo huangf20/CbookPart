@@ -11,21 +11,24 @@
     android:src="@mipmap/test"
     android:id="@+id/img_row_icon"
     ></ImageView>
-    <TextView
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="10dp"
-        android:layout_width="@dimen/img_row_icon_width"
-        android:layout_height="wrap_content"
-        android:text="弃妃，你又被翻牌了！"
-        android:id="@+id/img_row_name"
-        android:textColor="#1B1A1A"
-        ></TextView>
 
     <TextView
+        android:id="@+id/img_row_name"
+        android:layout_width="@dimen/img_row_icon_width"
+        android:layout_height="40dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="10dp"
+        android:gravity="top|left"
+        android:text="弃妃，你又被翻牌了！"
+        android:textColor="#1B1A1A"></TextView>
+
+    <TextView
+        android:layout_marginTop="5dp"
         android:layout_marginLeft="3dp"
         android:layout_width="@dimen/img_row_icon_width"
         android:layout_height="wrap_content"
         android:text="66万人在读"
+        android:textSize="12sp"
         android:id="@+id/img_row_readcount"
         ></TextView>
 </LinearLayout>

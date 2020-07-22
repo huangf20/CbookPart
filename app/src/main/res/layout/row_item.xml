@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+    <ImageView
+        android:layout_width="@dimen/one_plus_small_width"
+        android:layout_height="@dimen/one_plus_small_height"
+        android:src="@mipmap/test"
+        android:id="@+id/row_icon"
+        ></ImageView>
+    <TextView
+        android:id="@+id/row_name"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/one_plus_small_icon_text_margin"
+        android:lines="2"
+        android:layout_width="@dimen/one_plus_small_width"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="#323131"
+        android:text="总裁，情难自禁"
+        ></TextView>
 </LinearLayout>

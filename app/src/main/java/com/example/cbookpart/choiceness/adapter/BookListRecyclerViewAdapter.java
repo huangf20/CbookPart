@@ -70,7 +70,9 @@ public class BookListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVi
 
     @Override
     public int getItemCount() {
-
+        if(mRecyclerViewType==2){
+            return 8;
+        }
         return mBookItemBeans.size();
     }
 
@@ -137,12 +139,27 @@ public class BookListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVi
     }
 
     public class RowViewHolder extends RecyclerView.ViewHolder {
-
+        ImageView mImageView;
+        TextView mTvName;
+        View mView;
         public RowViewHolder(@NonNull View itemView) {
             super(itemView);
+            mImageView=itemView.findViewById(R.id.row_icon);
+            mTvName=itemView.findViewById(R.id.row_name);
+            mView=itemView;
         }
 
         public void bindData(BookItemBean bookItemBean) {
+            Glide.with(mContext)
+                    .load(bookItemBean.getCoverUrl())
+                    .into(mImageView);
+            mTvName.setText(bookItemBean.getName());
+            mView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    PageJump.jumpToById(bookItemBean.getBookId(),"bookdetail",mContext);
+                }
+            });
         }
     }
 }

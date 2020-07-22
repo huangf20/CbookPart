@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.widget.Toast;
 
-import androidx.fragment.app.Fragment;
+
 
 public class PageJump {
     public static void jumpTo(String uri, Context context) {

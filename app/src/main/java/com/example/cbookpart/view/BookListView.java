@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -65,7 +66,7 @@ public class BookListView extends FrameLayout implements View.OnClickListener {
             setOnePlusFour(view);
         }
         if (showType.equals("row")) {
-            View view = LayoutInflater.from(mContext).inflate(R.layout.layout_booklist_row, this, false);
+            View view = LayoutInflater.from(mContext).inflate(R.layout.layout_booklist_common, this, false);
             removeAllViews();
             setRow(view);
         }
@@ -155,7 +156,23 @@ public class BookListView extends FrameLayout implements View.OnClickListener {
     }
 
     private void setRow(View view) {
+        RecyclerView recyclerView;
+        TextView tvTitle, tvMore;
+        ImageView ivMore;
+        recyclerView = view.findViewById(R.id.img_row_recyclerview);
+        tvTitle = view.findViewById(R.id.img_row_title);
+        tvMore = view.findViewById(R.id.img_row_bt_more);
+        ivMore=view.findViewById(R.id.img_row_iv_more);
+        tvMore.setOnClickListener(this);
+        ivMore.setOnClickListener(this);
+        tvTitle.setText(mModuleBean.getTitle());
+        BookListRecyclerViewAdapter bookListRecyclerViewAdapter = new BookListRecyclerViewAdapter(mModuleBean.getItems(), mContext, 2);
+        GridLayoutManager managerGrid = new GridLayoutManager(mContext, 4);
+        recyclerView.setLayoutManager(managerGrid);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(bookListRecyclerViewAdapter);
         addView(view);
+
     }
 
 

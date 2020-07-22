@@ -204,6 +204,7 @@
         app:layout_constraintVertical_bias="0.84"></ImageView>
 
     <TextView
+        android:gravity="center_horizontal"
         android:layout_marginTop="@dimen/one_plus_small_icon_text_margin"
         android:lines="2"
         android:layout_width="@dimen/one_plus_small_width"
@@ -221,6 +222,7 @@
 
         ></TextView>
     <TextView
+        android:gravity="center_horizontal"
         android:layout_marginTop="@dimen/one_plus_small_icon_text_margin"
         android:lines="2"
         android:layout_width="@dimen/one_plus_small_width"
@@ -238,6 +240,7 @@
 
         ></TextView>
     <TextView
+        android:gravity="center_horizontal"
         android:layout_marginTop="@dimen/one_plus_small_icon_text_margin"
         android:lines="2"
         android:layout_width="@dimen/one_plus_small_width"
@@ -255,6 +258,7 @@
 
         ></TextView>
     <TextView
+        android:gravity="center_horizontal"
         android:layout_marginTop="@dimen/one_plus_small_icon_text_margin"
         android:lines="2"
         android:layout_width="@dimen/one_plus_small_width"

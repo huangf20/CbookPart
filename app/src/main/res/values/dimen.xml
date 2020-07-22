@@ -8,7 +8,7 @@
     <dimen name="one_plus_four_plus_height">140dp</dimen>
     <dimen name="one_plus_small_width">70dp</dimen>
     <dimen name="one_plus_small_height">90dp</dimen>
-    <dimen name="img_row_icon_width">100dp</dimen>
+    <dimen name="img_row_icon_width">90dp</dimen>
     <dimen name="img_row_icon_height">120dp</dimen>
     <dimen name="module_title_text_size">16sp</dimen>
     <dimen name="one_plus_small_icon_text_margin">5dp</dimen>
