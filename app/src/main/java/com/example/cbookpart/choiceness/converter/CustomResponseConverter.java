@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import okhttp3.ResponseBody;
 import retrofit2.Converter;
 
-public class CustomResponseConverter<T> implements Converter<ResponseBody, ResultBean> {
+public class CustomResponseConverter implements Converter<ResponseBody, ResultBean> {
 
     private static final Feature[] EMPTY_SERIALIZER_FEATURES = new Feature[0];
 

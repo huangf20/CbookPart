@@ -1,4 +1,4 @@
-package com.example.cbookpart.view;
+package com.example.cbookpart.choiceness.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -23,11 +23,13 @@ import com.example.cbookpart.choiceness.adapter.BookListRecyclerViewAdapter;
 import com.example.cbookpart.choiceness.data.ModuleBean.BookModuleBean;
 import com.example.cbookpart.choiceness.data.itemBean.BookItemBean;
 
+import java.util.ArrayList;
+
 
 public class BookListView extends FrameLayout implements View.OnClickListener {
     Context mContext;
     BookModuleBean mModuleBean;
-
+    ArrayList<String> mshowTypes =new ArrayList<>();
     public BookListView(@NonNull Context context) {
         super(context);
         init(context);
@@ -53,8 +55,12 @@ public class BookListView extends FrameLayout implements View.OnClickListener {
         mContext = context;
         View view = LayoutInflater.from(mContext).inflate(R.layout.layout_booklist_view, this, false);
         addView(view);
-    }
+        mshowTypes.add("img_row");
+        mshowTypes.add("column");
+        mshowTypes.add("row");
 
+
+    }
 
     public void setModuleBean(BookModuleBean moduleBean) {
         mModuleBean = moduleBean;
@@ -65,24 +71,15 @@ public class BookListView extends FrameLayout implements View.OnClickListener {
             removeAllViews();
             setOnePlusFour(view);
         }
-        if (showType.equals("row")) {
-            View view = LayoutInflater.from(mContext).inflate(R.layout.layout_booklist_common, this, false);
-            removeAllViews();
-            setRow(view);
+        for(String type : mshowTypes) {
+            if(showType.equals(type)){
+                int index=mshowTypes.indexOf(type);
+                View view = LayoutInflater.from(mContext).inflate(R.layout.layout_booklist_common, this, false);
+                removeAllViews();
+                setBookListCommon(view,index,getManagers().get(index));
+            }
         }
 
-        if (showType.equals("img_row")) {
-            View view = LayoutInflater.from(mContext).inflate(R.layout.layout_booklist_common, this, false);
-            removeAllViews();
-            setImgRow(view);
-
-        }
-
-        if (showType.equals("column")) {
-            View view = LayoutInflater.from(mContext).inflate(R.layout.layout_booklist_common, this, false);
-            removeAllViews();
-            setColumn(view);
-        }
 
     }
 
@@ -155,7 +152,8 @@ public class BookListView extends FrameLayout implements View.OnClickListener {
         addView(view);
     }
 
-    private void setRow(View view) {
+
+    private void setBookListCommon(View view,int type,LinearLayoutManager linearLayoutManager){
         RecyclerView recyclerView;
         TextView tvTitle, tvMore;
         ImageView ivMore;
@@ -166,55 +164,16 @@ public class BookListView extends FrameLayout implements View.OnClickListener {
         tvMore.setOnClickListener(this);
         ivMore.setOnClickListener(this);
         tvTitle.setText(mModuleBean.getTitle());
-        BookListRecyclerViewAdapter bookListRecyclerViewAdapter = new BookListRecyclerViewAdapter(mModuleBean.getItems(), mContext, 2);
-        GridLayoutManager managerGrid = new GridLayoutManager(mContext, 4);
-        recyclerView.setLayoutManager(managerGrid);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(bookListRecyclerViewAdapter);
-        addView(view);
+        BookListRecyclerViewAdapter bookListRecyclerViewAdapter = new BookListRecyclerViewAdapter(mModuleBean.getItems(), mContext, type);
 
-    }
-
-
-    private void setImgRow(View view) {
-        RecyclerView recyclerView;
-        TextView tvTitle, tvMore;
-        ImageView ivMore;
-        recyclerView = view.findViewById(R.id.img_row_recyclerview);
-        tvTitle = view.findViewById(R.id.img_row_title);
-        tvMore = view.findViewById(R.id.img_row_bt_more);
-        ivMore=view.findViewById(R.id.img_row_iv_more);
-        tvMore.setOnClickListener(this);
-        ivMore.setOnClickListener(this);
-        tvTitle.setText(mModuleBean.getTitle());
-        BookListRecyclerViewAdapter bookListRecyclerViewAdapter = new BookListRecyclerViewAdapter(mModuleBean.getItems(), mContext, 0);
-        LinearLayoutManager managerHorizontal = new LinearLayoutManager(mContext);
-        managerHorizontal.setOrientation(LinearLayoutManager.HORIZONTAL);
-        recyclerView.setLayoutManager(managerHorizontal);
+        recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(bookListRecyclerViewAdapter);
         addView(view);
     }
 
-    private void setColumn(View view) {
-        RecyclerView recyclerView;
-        TextView tvTitle, tvMore;
-        ImageView ivMore;
-        recyclerView = view.findViewById(R.id.img_row_recyclerview);
-        tvTitle = view.findViewById(R.id.img_row_title);
-        tvMore = view.findViewById(R.id.img_row_bt_more);
-        ivMore=view.findViewById(R.id.img_row_iv_more);
-        tvMore.setOnClickListener(this);
-        ivMore.setOnClickListener(this);
-        tvTitle.setText(mModuleBean.getTitle());
-        BookListRecyclerViewAdapter bookListRecyclerViewAdapter = new BookListRecyclerViewAdapter(mModuleBean.getItems(), mContext, 1);
-        LinearLayoutManager managerHorizontal = new LinearLayoutManager(mContext);
-        managerHorizontal.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(managerHorizontal);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(bookListRecyclerViewAdapter);
-        addView(view);
-    }
+
+
 
 
     @Override
@@ -244,5 +203,19 @@ public class BookListView extends FrameLayout implements View.OnClickListener {
         if(view.getId()==R.id.img_row_bt_more||view.getId()==R.id.img_row_iv_more){
             PageJump.jumpTo(mModuleBean.getLinkUrl(),mContext);
         }
+    }
+
+    private ArrayList<LinearLayoutManager>getManagers()
+    {
+        ArrayList<LinearLayoutManager> layoutManagers=new ArrayList<>();
+        LinearLayoutManager managerHorizontal = new LinearLayoutManager(mContext);
+        managerHorizontal.setOrientation(LinearLayoutManager.HORIZONTAL);
+        layoutManagers.add(managerHorizontal);
+        LinearLayoutManager managerVertical = new LinearLayoutManager(mContext);
+        managerVertical.setOrientation(LinearLayoutManager.VERTICAL);
+        layoutManagers.add(managerVertical);
+        GridLayoutManager managerGrid = new GridLayoutManager(mContext, 4);
+        layoutManagers.add(managerGrid);
+        return layoutManagers;
     }
 }

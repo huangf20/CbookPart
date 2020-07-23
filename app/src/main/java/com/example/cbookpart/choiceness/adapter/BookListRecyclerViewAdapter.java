@@ -23,6 +23,9 @@ public class BookListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVi
     private Context mContext;
     private int mRecyclerViewType;
     ArrayList<Integer> mViewType = new ArrayList<>();
+    public final static int TYPE_IMG_ROW=0;
+    public final static int TYPE_COLUMN=1;
+    public final static int TYPE_ROW=2;
 
     public BookListRecyclerViewAdapter(ArrayList<BookItemBean> bookItemBeans, Context context, int type) {
         mRecyclerViewType = type;
@@ -38,11 +41,11 @@ public class BookListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVi
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(viewType, parent, false);
         switch (mRecyclerViewType) {
-            case 0:
+            case TYPE_IMG_ROW:
                 return new ImgRowViewHolder(view);
-            case 1:
+            case TYPE_COLUMN:
                 return new ColumnViewHolder(view);
-            case 2:
+            case TYPE_ROW:
                 return new RowViewHolder(view);
         }
         return null;
@@ -70,7 +73,7 @@ public class BookListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVi
 
     @Override
     public int getItemCount() {
-        if(mRecyclerViewType==2){
+        if(mRecyclerViewType==TYPE_ROW){
             return 8;
         }
         return mBookItemBeans.size();

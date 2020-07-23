@@ -4,9 +4,9 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <com.example.cbookpart.view.BookListView
+    <com.example.cbookpart.choiceness.view.BookListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/book_list_view"
-        ></com.example.cbookpart.view.BookListView>
+        ></com.example.cbookpart.choiceness.view.BookListView>
 </LinearLayout>

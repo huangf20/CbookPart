@@ -35,7 +35,7 @@ public class CustomConverterFactory extends Converter.Factory {
     @Override
     public Converter<ResponseBody, ?> responseBodyConverter(Type type, Annotation[] annotations,
                                                             Retrofit retrofit) {
-        return new CustomResponseConverter<>(type, mParserConfig, featureValues, features);
+        return new CustomResponseConverter(type, mParserConfig, featureValues, features);
     }
 
     /*@Override

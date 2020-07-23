@@ -12,10 +12,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.cbookpart.R;
 import com.example.cbookpart.choiceness.fragment.ValuePageFragment;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
