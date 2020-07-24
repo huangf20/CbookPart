@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.cbookpart.api.PageJump;
+import com.example.cbookpart.tool.PageJump;
 import com.example.cbookpart.choiceness.data.itemBean.BannerItemBean;
 import com.youth.banner.adapter.BannerAdapter;
 

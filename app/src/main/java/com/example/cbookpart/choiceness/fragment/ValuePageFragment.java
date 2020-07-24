@@ -14,14 +14,11 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.cbookpart.R;
-import com.example.cbookpart.api.ApiService;
-import com.example.cbookpart.api.RetrofitManager;
+import com.example.cbookpart.tool.ApiService;
+import com.example.cbookpart.tool.RetrofitManager;
 import com.example.cbookpart.choiceness.data.ResultBean;
 import com.example.cbookpart.choiceness.data.ValueBean;
-import com.example.cbookpart.choiceness.fragment.TabFragmentPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
-
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 

@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.cbookpart.R;
 import com.example.cbookpart.choiceness.fragment.ValuePageFragment;
+import com.example.cbookpart.tool.StatusBarUtils;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        StatusBarUtils.setColor(this,Color.rgb(250,250,250));
         init();
     }
 

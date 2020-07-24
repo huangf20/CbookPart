@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.cbookpart.R;
-import com.example.cbookpart.api.PageJump;
+import com.example.cbookpart.tool.PageJump;
 import com.example.cbookpart.choiceness.data.itemBean.BookItemBean;
 
 
