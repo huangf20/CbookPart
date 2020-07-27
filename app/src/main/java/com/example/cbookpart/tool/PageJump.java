@@ -20,11 +20,11 @@ public class PageJump {
         }
     }
 
-    public static void jumpToById(int id, String path, Context context) {
+    public static void jumpToDetailById(int id, Context context) {
         Uri uri = new Uri.Builder()
                 .scheme("zhaoxitech")
                 .authority("com.zhaoxitech.cbook")
-                .path(path)
+                .path("bookdetail")
                 .appendQueryParameter("bookId", id + "")
                 .build();
         try {
@@ -36,4 +36,19 @@ public class PageJump {
         }
     }
 
+    public static void jumpToReaderById(int id, Context context) {
+        Uri uri = new Uri.Builder()
+                .scheme("zhaoxitech")
+                .authority("com.zhaoxitech.cbook")
+                .path("reader")
+                .appendQueryParameter("bookId", id + "")
+                .build();
+        try {
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            context.startActivity(intent);
+        } catch (android.content.ActivityNotFoundException e) {
+            e.printStackTrace();
+            Toast.makeText(context, "你没有安装此应用", Toast.LENGTH_SHORT).show();
+        }
+    }
 }

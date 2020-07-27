@@ -179,22 +179,22 @@ public class BookListView extends FrameLayout implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.big_icon_one_plus || view.getId() == R.id.one_plus_linear) {
-            PageJump.jumpToById(mModuleBean.getItems().get(0).getBookId(), "bookdetail", mContext);
+            PageJump.jumpToDetailById(mModuleBean.getItems().get(0).getBookId(),  mContext);
         }
         if (view.getId() == R.id.small_icon1_one_plus || view.getId() == R.id.small_icon1_one_plus) {
-            PageJump.jumpToById(mModuleBean.getItems().get(1).getBookId(), "bookdetail", mContext);
+            PageJump.jumpToDetailById(mModuleBean.getItems().get(1).getBookId(),  mContext);
         }
         if (view.getId() == R.id.small_icon2_one_plus || view.getId() == R.id.small_icon2_one_plus) {
-            PageJump.jumpToById(mModuleBean.getItems().get(2).getBookId(), "bookdetail", mContext);
+            PageJump.jumpToDetailById(mModuleBean.getItems().get(2).getBookId(),  mContext);
         }
         if (view.getId() == R.id.small_icon3_one_plus || view.getId() == R.id.small_icon3_one_plus) {
-            PageJump.jumpToById(mModuleBean.getItems().get(3).getBookId(), "bookdetail", mContext);
+            PageJump.jumpToDetailById(mModuleBean.getItems().get(3).getBookId(),  mContext);
         }
         if (view.getId() == R.id.small_icon4_one_plus || view.getId() == R.id.small_icon4_one_plus) {
-            PageJump.jumpToById(mModuleBean.getItems().get(4).getBookId(), "bookdetail", mContext);
+            PageJump.jumpToDetailById(mModuleBean.getItems().get(4).getBookId(),  mContext);
         }
         if (view.getId() == R.id.bt_free_read_one_plus) {
-            PageJump.jumpToById(mModuleBean.getItems().get(0).getBookId(), "reader", mContext);
+            PageJump.jumpToReaderById(mModuleBean.getItems().get(0).getBookId(),  mContext);
         }
         if(view.getId()==R.id.one_plus_bt_more||view.getId()==R.id.one_plus_iv_more)
         {

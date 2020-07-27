@@ -102,7 +102,7 @@ public class BookListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVi
             mView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    PageJump.jumpToById(bookItemBean.getBookId(), "bookdetail", mContext);
+                    PageJump.jumpToDetailById(bookItemBean.getBookId(),  mContext);
                 }
             });
 
@@ -135,7 +135,7 @@ public class BookListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVi
             mView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    PageJump.jumpToById(bookItemBean.getBookId(), "bookdetail", mContext);
+                    PageJump.jumpToDetailById(bookItemBean.getBookId(), mContext);
                 }
             });
         }
@@ -160,7 +160,7 @@ public class BookListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVi
             mView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    PageJump.jumpToById(bookItemBean.getBookId(),"bookdetail",mContext);
+                    PageJump.jumpToDetailById(bookItemBean.getBookId(),mContext);
                 }
             });
         }
