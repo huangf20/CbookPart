@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.cbookpart.tool.ImageLoader;
 import com.example.cbookpart.tool.PageJump;
 import com.example.cbookpart.choiceness.data.itemBean.BannerItemBean;
 import com.youth.banner.adapter.BannerAdapter;
@@ -38,9 +39,7 @@ public class BannerImageAdapter extends BannerAdapter<BannerItemBean, BannerImag
     @Override
     public void onBindView(BannerViewHolder holder, BannerItemBean data, int position, int size) {
         ImageView imageView = holder.imageView;
-        Glide.with(mContext)
-                .load(data.getImgUrl())
-                .into(imageView);
+        ImageLoader.setImageToView(mContext,data.getImgUrl(),imageView);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

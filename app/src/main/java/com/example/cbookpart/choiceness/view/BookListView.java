@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import com.example.cbookpart.R;
+import com.example.cbookpart.tool.ImageLoader;
 import com.example.cbookpart.tool.PageJump;
 import com.example.cbookpart.choiceness.adapter.BookListRecyclerViewAdapter;
 import com.example.cbookpart.choiceness.data.ModuleBean.BookModuleBean;
@@ -130,21 +131,13 @@ public class BookListView extends FrameLayout implements View.OnClickListener {
         tvCategory.setText(bigBookItemBean.getCategory());
         tvWordCount.setText(bigBookItemBean.getWordCount() / 10000 + "万字");
         tvReadingCount.setText(bigBookItemBean.getReadingCount());
-        Glide.with(mContext)
-                .load(bigBookItemBean.getCoverUrl().replace("http://", "https://"))
-                .into(ivBigIcon);
-        Glide.with(mContext)
-                .load(mModuleBean.getItems().get(1).getCoverUrl())
-                .into(ivSmallIcon1);
-        Glide.with(mContext)
-                .load(mModuleBean.getItems().get(2).getCoverUrl())
-                .into(ivSmallIcon2);
-        Glide.with(mContext)
-                .load(mModuleBean.getItems().get(3).getCoverUrl())
-                .into(ivSmallIcon3);
-        Glide.with(mContext)
-                .load(mModuleBean.getItems().get(4).getCoverUrl())
-                .into(ivSmallIcon4);
+
+        ImageLoader.setImageToView(mContext,bigBookItemBean.getCoverUrl().replace("http://", "https://"),ivBigIcon);
+        ImageLoader.setImageToView(mContext,mModuleBean.getItems().get(1).getCoverUrl(),ivSmallIcon1);
+        ImageLoader.setImageToView(mContext,mModuleBean.getItems().get(2).getCoverUrl(),ivSmallIcon2);
+        ImageLoader.setImageToView(mContext,mModuleBean.getItems().get(3).getCoverUrl(),ivSmallIcon3);
+        ImageLoader.setImageToView(mContext,mModuleBean.getItems().get(4).getCoverUrl(),ivSmallIcon4);
+
         tvSmallName1.setText(mModuleBean.getItems().get(1).getName());
         tvSmallName2.setText(mModuleBean.getItems().get(2).getName());
         tvSmallName3.setText(mModuleBean.getItems().get(3).getName());

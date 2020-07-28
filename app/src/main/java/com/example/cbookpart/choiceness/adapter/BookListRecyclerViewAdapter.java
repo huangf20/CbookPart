@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.cbookpart.R;
+import com.example.cbookpart.tool.ImageLoader;
 import com.example.cbookpart.tool.PageJump;
 import com.example.cbookpart.choiceness.data.itemBean.BookItemBean;
 
@@ -96,9 +97,7 @@ public class BookListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVi
             mTvName.setText(bookItemBean.getName());
             mTvName.setLines(2);
             mTvReadCount.setText(bookItemBean.getReadingCount());
-            Glide.with(mContext)
-                    .load(bookItemBean.getCoverUrl())
-                    .into(mImageView);
+            ImageLoader.setImageToView(mContext,bookItemBean.getCoverUrl(),mImageView);
             mView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -125,9 +124,7 @@ public class BookListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVi
         }
 
         public void bindData(BookItemBean bookItemBean) {
-            Glide.with(mContext)
-                    .load(bookItemBean.getCoverUrl())
-                    .into(mImageView);
+            ImageLoader.setImageToView(mContext,bookItemBean.getCoverUrl(),mImageView);
             mTvName.setText(bookItemBean.getName());
             mTvShortDesc.setText(bookItemBean.getShortDesc());
             mTvAuthor.setText(bookItemBean.getAuthor());
@@ -153,9 +150,7 @@ public class BookListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVi
         }
 
         public void bindData(BookItemBean bookItemBean) {
-            Glide.with(mContext)
-                    .load(bookItemBean.getCoverUrl())
-                    .into(mImageView);
+            ImageLoader.setImageToView(mContext,bookItemBean.getCoverUrl(),mImageView);
             mTvName.setText(bookItemBean.getName());
             mView.setOnClickListener(new View.OnClickListener() {
                 @Override
