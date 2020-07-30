@@ -26,25 +26,6 @@ public class BookItemBean extends BaseItemBean {
     public BookItemBean() {
     }
 
-    public BookItemBean(int bookId, String author, String name, String shortDesc, String customDesc, String mark, String coverUrl, String endStatus, int wordCount, ArrayList<String> tags, String cornerInfo, String parentCategory, String category, String bookMark, String readingCount, String ranking, String cpid) {
-        this.bookId = bookId;
-        this.author = author;
-        this.name = name;
-        this.shortDesc = shortDesc;
-        this.customDesc = customDesc;
-        this.mark = mark;
-        this.coverUrl = coverUrl;
-        this.endStatus = endStatus;
-        this.wordCount = wordCount;
-        this.tags = tags;
-        this.cornerInfo = cornerInfo;
-        this.parentCategory = parentCategory;
-        this.category = category;
-        this.bookMark = bookMark;
-        this.readingCount = readingCount;
-        this.ranking = ranking;
-        this.cpid = cpid;
-    }
 
     public int getBookId() {
         return bookId;

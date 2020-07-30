@@ -11,12 +11,7 @@ public class BannerItemBean extends BaseItemBean {
     public BannerItemBean() {
     }
 
-    public BannerItemBean(String title, String text, String imgUrl, String linkUrl) {
-        this.title = title;
-        this.text = text;
-        this.imgUrl = imgUrl;
-        this.linkUrl = linkUrl;
-    }
+
 
     public String getTitle() {
         return title;
