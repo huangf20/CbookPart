@@ -8,11 +8,13 @@ import com.example.cbookpart.choiceness.data.ModuleBean.BannerModuleBean;
 import com.example.cbookpart.choiceness.data.ModuleBean.BookModuleBean;
 import com.example.cbookpart.choiceness.data.ModuleBean.EntryModuleBean;
 import com.example.cbookpart.choiceness.data.ModuleBean.ModuleBean;
+import com.example.cbookpart.choiceness.data.ModuleBean.RankListModuleBean;
 import com.example.cbookpart.choiceness.data.ResultBean;
 import com.example.cbookpart.choiceness.data.baseBean.BaseItemBean;
 import com.example.cbookpart.choiceness.data.itemBean.BannerItemBean;
 import com.example.cbookpart.choiceness.data.itemBean.BookItemBean;
 import com.example.cbookpart.choiceness.data.itemBean.EntryItemBean;
+import com.example.cbookpart.choiceness.data.itemBean.RankListItemBean;
 
 import java.io.IOException;
 import java.lang.reflect.Constructor;
@@ -46,12 +48,15 @@ public class CustomResponseConverter implements Converter<ResponseBody, ResultBe
         mTypes.add("banner");
         mTypes.add("entry");
         mTypes.add("booklist");
+        mTypes.add("ranklist");
         mItemClasses.add(BannerItemBean.class);
         mItemClasses.add(EntryItemBean.class);
         mItemClasses.add(BookItemBean.class);
+        mItemClasses.add(RankListItemBean.class);
         mModuleClasses.add(BannerModuleBean.class);
         mModuleClasses.add(EntryModuleBean.class);
         mModuleClasses.add(BookModuleBean.class);
+        mModuleClasses.add(RankListModuleBean.class);
     }
 
     @Override

@@ -1,11 +1,12 @@
 package com.example.cbookpart.choiceness.data.ModuleBean;
 
-import com.example.cbookpart.choiceness.data.itemBean.BannerItemBean;
+import com.example.cbookpart.choiceness.data.itemBean.RankListItemBean;
 
 import java.util.ArrayList;
 
-public class BannerModuleBean extends ModuleBean<BannerItemBean>{
-    public BannerModuleBean(ModuleBean moduleBean) {
+public class RankListModuleBean extends ModuleBean<RankListItemBean>{
+
+    public RankListModuleBean(ModuleBean moduleBean) {
         this.id=moduleBean.getId();
         this.type=moduleBean.getType();
         this.title=moduleBean.getTitle();
@@ -23,12 +24,8 @@ public class BannerModuleBean extends ModuleBean<BannerItemBean>{
         this.items=moduleBean.getItems();
         this.canReceiveTimes=moduleBean.getCanReceiveTimes();
     }
-
-
     @Override
-    public ArrayList<BannerItemBean> getItems() {
+    public ArrayList<RankListItemBean> getItems() {
         return super.getItems();
     }
-
-
 }
