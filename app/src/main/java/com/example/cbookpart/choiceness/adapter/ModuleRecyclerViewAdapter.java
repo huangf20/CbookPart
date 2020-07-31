@@ -13,10 +13,12 @@ import com.example.cbookpart.choiceness.adapter.holder.AbsModuleHolder;
 import com.example.cbookpart.choiceness.adapter.holder.BannerModuleHolder;
 import com.example.cbookpart.choiceness.adapter.holder.BookModuleHolder;
 import com.example.cbookpart.choiceness.adapter.holder.EntryModuleHolder;
+import com.example.cbookpart.choiceness.adapter.holder.RankListModuleHolder;
 import com.example.cbookpart.choiceness.data.ModuleBean.BannerModuleBean;
 import com.example.cbookpart.choiceness.data.ModuleBean.BookModuleBean;
 import com.example.cbookpart.choiceness.data.ModuleBean.EntryModuleBean;
 import com.example.cbookpart.choiceness.data.ModuleBean.ModuleBean;
+import com.example.cbookpart.choiceness.data.ModuleBean.RankListModuleBean;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -45,6 +47,7 @@ public class ModuleRecyclerViewAdapter extends RecyclerView.Adapter<AbsModuleHol
         registerModule(BannerModuleBean.class, BannerModuleHolder.class, R.layout.layout_banner_module);
         registerModule(EntryModuleBean.class, EntryModuleHolder.class, R.layout.layout_entry_module);
         registerModule(BookModuleBean.class, BookModuleHolder.class, R.layout.layout_booklist_module);
+        registerModule(RankListModuleBean.class, RankListModuleHolder.class, R.layout.layout_ranklist_module);
     }
 
     private void registerModule(Class<? extends ModuleBean> dataClass, Class<? extends AbsModuleHolder> holderClass, int layoutId) {
