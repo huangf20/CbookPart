@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.Application;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FragmentManager mFragmentManager;
     private Fragment mPageFragmentNow;
     private Map<Integer, ValuePageFragment> mFragmentMap = new HashMap<>();
+    private Application mApplication;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         StatusBarUtils.setColor(this,Color.rgb(250,250,250));
         init();
+        mApplication=getApplication();
+        System.out.println(mApplication);
+
+
     }
 
     private void init() {

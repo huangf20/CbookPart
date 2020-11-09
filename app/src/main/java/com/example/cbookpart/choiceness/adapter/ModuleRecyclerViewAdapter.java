@@ -39,9 +39,9 @@ public class ModuleRecyclerViewAdapter extends RecyclerView.Adapter<AbsModuleHol
 
     }
 
-    public List<Class<? extends ModuleBean>> mModuleTypes = new ArrayList<>();
-    public List<Class<? extends AbsModuleHolder>> mHolderTypes = new ArrayList<>();
-    public List<Integer> mViewTypes = new ArrayList<>();
+    private List<Class<? extends ModuleBean>> mModuleTypes = new ArrayList<>();
+    private List<Class<? extends AbsModuleHolder>> mHolderTypes = new ArrayList<>();
+    private List<Integer> mViewTypes = new ArrayList<>();
 
     {
         registerModule(BannerModuleBean.class, BannerModuleHolder.class, R.layout.layout_banner_module);

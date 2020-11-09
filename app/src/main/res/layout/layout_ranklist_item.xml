@@ -3,7 +3,9 @@
     android:layout_width="380dp"
     android:layout_height="wrap_content"
     android:layout_margin="20dp"
-    android:orientation="vertical">
+    android:background="@drawable/white_backgroud"
+    android:orientation="vertical"
+    android:elevation="2dp">
 
     <TextView
         android:layout_width="match_parent"
